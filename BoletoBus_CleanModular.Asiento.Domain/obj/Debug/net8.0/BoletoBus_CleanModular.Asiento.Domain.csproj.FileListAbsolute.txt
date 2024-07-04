@@ -1,0 +1,16 @@
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\bin\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.deps.json
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\bin\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\bin\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\bin\Debug\net8.0\BoletoBus_CleanModular.Common.Data.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\bin\Debug\net8.0\BoletoBus_CleanModular.Common.Data.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.csproj.AssemblyReference.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.AssemblyInfoInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.AssemblyInfo.cs
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.sourcelink.json
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBu.2336CE55.Up2Date
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\refint\BoletoBus_CleanModular.Asiento.Domain.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Domain.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Domain\obj\Debug\net8.0\ref\BoletoBus_CleanModular.Asiento.Domain.dll

@@ -1,0 +1,12 @@
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\bin\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.deps.json
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\bin\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\bin\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.AssemblyInfo.cs
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.sourcelink.json
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\refint\BoletosBus_CleanModular.Infraestructure.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletosBus_CleanModular.Infraestructure\obj\Debug\net8.0\ref\BoletosBus_CleanModular.Infraestructure.dll
