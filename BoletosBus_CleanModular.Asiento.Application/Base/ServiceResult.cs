@@ -16,4 +16,5 @@ namespace BoletosBus_CleanModular.Asiento.Application.Base
         public string? Message { get; set; }
         public dynamic? Data { get; set; }
     }
+
 }

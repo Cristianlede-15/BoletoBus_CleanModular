@@ -12,6 +12,7 @@ namespace BoletoBus_CleanModular.Asiento.Persistence.Interfaces
         void SaveAsiento(AsientoSaveDto asientoSaveModel);
         void UpdateAsiento(AsientoUpdateDto asientoUpdateModel);
         void DeleteAsiento(AsientoDeleteDto asientoDeleteModel);
+        void GetAsientoById(AsientoDeleteDto asientoDeleteModel);
 
         List<AsientoAccesDto> GetAsientos();
         AsientoAccesDto GetAsientos(int IdAsiento);

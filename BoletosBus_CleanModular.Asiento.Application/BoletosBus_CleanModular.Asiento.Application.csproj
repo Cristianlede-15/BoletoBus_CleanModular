@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BoletoBus_CleanModular.Asiento.Domain\BoletoBus_CleanModular.Asiento.Domain.csproj" />
     <ProjectReference Include="..\BoletoBus_CleanModular.Common.Data\BoletoBus_CleanModular.Common.Data.csproj" />
+    <ProjectReference Include="..\BoletosBus_CleanModular.Infraestructure\BoletosBus_CleanModular.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

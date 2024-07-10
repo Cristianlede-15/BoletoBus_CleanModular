@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BoletosBus_CleanModular.Infraestructure\BoletosBus_CleanModular.Infraestructure.csproj" />
+  </ItemGroup>
+
 </Project>

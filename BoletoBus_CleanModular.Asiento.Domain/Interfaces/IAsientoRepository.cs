@@ -3,8 +3,7 @@ using BoletoBus_CleanModular.Common.Data.Repository;
 
 namespace BoletoBus_CleanModular.Asiento.Domain.Interfaces
 {
-    public interface IAsientoRepository : IBaseRepository<Asiento.Domain.Entities.Asiento, int>
+    public interface IAsientoRepository : IBaseRepository<Domain.Entities.Asiento, int>
     {
-        List<Asiento.Domain.Entities.Asiento> GetAsientosPorId(int asientoId);
     }
 }

@@ -12,5 +12,7 @@ namespace BoletosBus_CleanModular.Asiento.Application.Dtos
         public int? NumeroPiso { get; set; }
         public int NumeroAsiento { get; set; }
         public DateTime? FechaCreacion { get; set; }
+        public object CapacidadTotal { get; internal set; }
+        public object Disponible { get; internal set; }
     }
 }

@@ -1,23 +1,18 @@
-﻿using BoletoBus_CleanModular.Common.Data.Repository;
+﻿
 using BoletoBus_CleanModular.Bus.Application.Base;
 using BoletoBus_CleanModular.Bus.Application.Dtos;
 using BoletoBus_CleanModular.Bus.Application.Interfaces;
-using BoletoBus_CleanModular.Bus.Domain.Entities;
-using BoletoBus_CleanModular.Bus.Domain.Interfaces;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+using BoletosBus_CleanModular.Infraestructure.Logger.Services;
+
 
 namespace BoletoBus_CleanModular.Bus.Application.Services
 {
     public class BusService : IBusService
     {
-        private readonly IBusRepository _busRepository;
-        private readonly ILogger<BusService> _logger;
+        private readonly IBusService _busRepository;
+        private readonly LoggerService<BusService> _logger;
 
-        public BusService(IBusRepository busRepository, ILogger<BusService> logger)
+        public BusService(IBusService busRepository, LoggerService<BusService> logger)
         {
             _busRepository = busRepository;
             _logger = logger;
@@ -28,10 +23,10 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
             ServiceResult result = new ServiceResult();
             try
             {
-                var bus = _busRepository.FindById(busDelete.Id);
+                var bus = _busRepository.GetBus(busDelete.IdBus);
                 if (bus != null)
                 {
-                    _busRepository.Remove(bus);
+                    _busRepository.DeleteBus(busDelete);
                     result.Success = true;
                     result.Message = "Bus eliminado correctamente.";
                     _logger.LogInformation("Bus eliminado correctamente.");
@@ -40,14 +35,14 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "Bus no encontrado.";
-                    _logger.LogWarning("Bus con id {Id} no encontrado.", busDelete.Id);
+                    _logger.LogInformation("Bus con id {Id} no encontrado.");
                 }
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al eliminar el bus: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                _logger.LogError(result.Message);
             }
             return result;
         }
@@ -57,7 +52,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
             ServiceResult result = new ServiceResult();
             try
             {
-                var bus = _busRepository.FindById(id);
+                var bus = _busRepository.GetBus(id);
                 if (bus != null)
                 {
                     result.Data = bus;
@@ -68,14 +63,14 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "Bus no encontrado.";
-                    _logger.LogWarning("Bus con id {Id} no encontrado.", id);
+                    _logger.LogInformation("Bus con id {Id} no encontrado.");
                 }
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al obtener el bus: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                _logger.LogError(result.Message);
             }
             return result;
         }
@@ -85,7 +80,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
             ServiceResult result = new ServiceResult();
             try
             {
-                var buses = _busRepository.GetAll();
+                var buses = _busRepository.GetBuses();
                 result.Data = buses;
                 result.Success = true;
                 _logger.LogInformation("Buses obtenidos correctamente.");
@@ -94,7 +89,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
             {
                 result.Success = false;
                 result.Message = "Error al obtener los buses: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                _logger.LogError(result.Message);
             }
             return result;
         }
@@ -104,12 +99,11 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
             ServiceResult result = new ServiceResult();
             try
             {
-                // Validaciones
                 if (string.IsNullOrWhiteSpace(busSave.NumeroPlaca) || busSave.NumeroPlaca.Length > 50)
                 {
                     result.Success = false;
                     result.Message = "El NumeroPlaca es inválido.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogError(result.Message);
                     return result;
                 }
 
@@ -117,7 +111,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "El Nombre es inválido.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -125,7 +119,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "La CapacidadPiso1 debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -133,7 +127,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "La CapacidadPiso2 debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -141,7 +135,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "El campo Disponible es inválido.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -149,21 +143,11 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "La FechaCreacion es inválida.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
-                var bus = new Bus
-                {
-                    NumeroPlaca = busSave.NumeroPlaca,
-                    Nombre = busSave.Nombre,
-                    CapacidadPiso1 = busSave.CapacidadPiso1,
-                    CapacidadPiso2 = busSave.CapacidadPiso2,
-                    Disponible = busSave.Disponible,
-                    FechaCreacion = busSave.FechaCreacion
-                };
-
-                _busRepository.Save(bus);
+                _busRepository.SaveBus(busSave);
                 result.Success = true;
                 result.Message = "Bus guardado correctamente.";
                 _logger.LogInformation("Bus guardado correctamente.");
@@ -172,7 +156,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
             {
                 result.Success = false;
                 result.Message = "Error al guardar el bus: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                _logger.LogError(result.Message);
             }
             return result;
         }
@@ -182,12 +166,11 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
             ServiceResult result = new ServiceResult();
             try
             {
-                // Validaciones
                 if (string.IsNullOrWhiteSpace(busUpdate.NumeroPlaca) || busUpdate.NumeroPlaca.Length > 50)
                 {
                     result.Success = false;
                     result.Message = "El NumeroPlaca es inválido.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -195,7 +178,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "El Nombre es inválido.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -203,7 +186,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "La CapacidadPiso1 debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -211,7 +194,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "La CapacidadPiso2 debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -219,37 +202,20 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "El campo Disponible es inválido.";
-                    _logger.LogWarning(result.Message);
+                    _logger.LogInformation(result.Message);
                     return result;
                 }
 
-                var bus = _busRepository.FindById(busUpdate.IdBus);
-                if (bus != null)
-                {
-                    bus.NumeroPlaca = busUpdate.NumeroPlaca;
-                    bus.Nombre = busUpdate.Nombre;
-                    bus.CapacidadPiso1 = busUpdate.CapacidadPiso1;
-                    bus.CapacidadPiso2 = busUpdate.CapacidadPiso2;
-                    bus.Disponible = busUpdate.Disponible;
-                    bus.FechaActualizacion = busUpdate.FechaModificacion;
-
-                    _busRepository.Update(bus);
-                    result.Success = true;
-                    result.Message = "Bus actualizado correctamente.";
-                    _logger.LogInformation("Bus actualizado correctamente.");
-                }
-                else
-                {
-                    result.Success = false;
-                    result.Message = "Bus no encontrado.";
-                    _logger.LogWarning("Bus con id {Id} no encontrado.", busUpdate.IdBus);
-                }
+                _busRepository.UpdateBuses(busUpdate);
+                result.Success = true;
+                result.Message = "Bus actualizado correctamente.";
+                _logger.LogInformation("Bus actualizado correctamente.");
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al actualizar el bus: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                _logger.LogError(result.Message);
             }
             return result;
         }

@@ -9,6 +9,5 @@ namespace BoletoBus_CleanModular.Cliente.Domain.Interfaces
 {
     public interface IClienteRepository : IBaseRepository<Cliente.Domain.Entities.Cliente, int>
     {
-        List<Cliente.Domain.Entities.Cliente> GetClientePorId(int clienteId);
     }
 }

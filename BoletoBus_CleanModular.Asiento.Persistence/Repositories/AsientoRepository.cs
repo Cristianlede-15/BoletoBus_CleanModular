@@ -1,115 +1,107 @@
-﻿using BoletoBus_CleanModular.Common.Data.Repository;
-using BoletosBus_CleanModular.Asiento.Application.Base;
-using BoletosBus_CleanModular.Asiento.Application.Dtos;
-using BoletosBus_CleanModular.Asiento.Application.Interfaces;
-using BoletoBus_CleanModular.Asiento.Domain.Entities;
-using BoletoBus_CleanModular.Asiento.Domain.Interfaces;
-using Microsoft.Extensions.Logging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using BoletoBus_CleanModular.Asiento.Domain.Entities;
+using BoletoBus_CleanModular.Asiento.Domain.Interfaces;
+using BoletoBus_CleanModular.Asiento.Persistence.Context;
+using BoletoBus_CleanModular.Asiento.Persistence.Interfaces;
+using BoletoBus_CleanModular.Common.Data.Repository;
+using BoletosBus_CleanModular.Asiento.Application.Base;
+using BoletosBus_CleanModular.Asiento.Application.Interfaces;
+using BoletosBus_CleanModular.Asiento.Application.Services;
+using BoletosBus_CleanModular.Infraestructure.Logger.Services;
+using Microsoft.Extensions.Logging;
 
-namespace BoletosBus_CleanModular.Asiento.Application.Services
+namespace BoletoBus_CleanModular.Asiento.Persistence.Repositories
 {
-    public class AsientoService : IAsientoService
+    public class AsientoRepository : IAsientoRepository
     {
-        private readonly IAsientoRepository _asientoRepository;
-        private readonly ILogger<AsientoService> _logger;
+        private readonly IAsientoRepository asientoDb;
+        private readonly LoggerService<AsientoService> logger;
 
-        public AsientoService(IAsientoRepository asientoRepository, ILogger<AsientoService> logger)
+        public AsientoRepository(IAsientoRepository asientoDb, LoggerService<AsientoService> logger)
         {
-            _asientoRepository = asientoRepository;
-            _logger = logger;
+            this.asientoDb = asientoDb;
+            this.logger = logger;
         }
 
-        public ServiceResult DeleteAsientos(AsientoDeleteDto asientoDelete)
+
+        public ServiceResult FindById(int id)
         {
             ServiceResult result = new ServiceResult();
             try
             {
-                var asiento = _asientoRepository.FindById(asientoDelete.IdAsiento);
-                if (asiento != null)
-                {
-                    _asientoRepository.Remove(asiento);
-                    result.Success = true;
-                    result.Message = "Asientos eliminados correctamente.";
-                    _logger.LogInformation("Asientos eliminados correctamente.");
-                }
-                else
-                {
-                    result.Success = false;
-                    result.Message = "Asiento no encontrado.";
-                    _logger.LogWarning("Asiento con id {Id} no encontrado.", asientoDelete.IdAsiento);
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = "Error al eliminar los asientos: " + ex.Message;
-                _logger.LogError(ex, result.Message);
-            }
-            return result;
-        }
-
-        public ServiceResult GetAsiento(int id)
-        {
-            ServiceResult result = new ServiceResult();
-            try
-            {
-                var asiento = _asientoRepository.FindById(id);
+                var asiento = asientoDb.FindById(id);
                 if (asiento != null)
                 {
                     result.Data = asiento;
                     result.Success = true;
-                    _logger.LogInformation("Asiento obtenido correctamente.");
+                    logger.LogInformation("Asiento obtenido correctamente.");
                 }
                 else
                 {
                     result.Success = false;
                     result.Message = "Asiento no encontrado.";
-                    _logger.LogWarning("Asiento con id {Id} no encontrado.", id);
+                    logger.LogInformation("Asiento con id {Id} no encontrado.");
                 }
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al obtener el asiento: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                logger.LogError(result.Message);
             }
             return result;
         }
 
-        public ServiceResult GetAsientos()
+        public ServiceResult GetAll()
         {
             ServiceResult result = new ServiceResult();
             try
             {
-                var asientos = _asientoRepository.GetAll();
-                result.Data = asientos;
+                result.Data = asientoDb.GetAll();
                 result.Success = true;
-                _logger.LogInformation("Asientos obtenidos correctamente.");
+                logger.LogInformation("Asientos obtenidos correctamente.");
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al obtener los asientos: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                logger.LogError(result.Message);
             }
             return result;
         }
 
-        public ServiceResult SaveAsiento(AsientoSaveDto asientoSave)
+        public ServiceResult Remove(Domain.Entities.Asiento asientoDelete)
         {
             ServiceResult result = new ServiceResult();
             try
             {
-                // Validaciones
+                asientoDb.Remove(asientoDelete);
+                result.Success = true;
+                result.Message = "Asientos eliminados correctamente.";
+                logger.LogInformation("Asientos eliminados correctamente.");
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error al eliminar los asientos: " + ex.Message;
+                logger.LogError(result.Message);
+            }
+            return result;
+        }
+
+        public ServiceResult Save(Domain.Entities.Asiento asientoSave)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
                 if (asientoSave.IdBus <= 0)
                 {
                     result.Success = false;
                     result.Message = "El IdBus debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    logger.LogError(result.Message);
                     return result;
                 }
 
@@ -117,7 +109,7 @@ namespace BoletosBus_CleanModular.Asiento.Application.Services
                 {
                     result.Success = false;
                     result.Message = "El NumeroPiso debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    logger.LogError(result.Message);
                     return result;
                 }
 
@@ -125,7 +117,7 @@ namespace BoletosBus_CleanModular.Asiento.Application.Services
                 {
                     result.Success = false;
                     result.Message = "El NumeroAsiento debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    logger.LogInformation(result.Message);
                     return result;
                 }
 
@@ -133,43 +125,34 @@ namespace BoletosBus_CleanModular.Asiento.Application.Services
                 {
                     result.Success = false;
                     result.Message = "La FechaCreacion es inválida.";
-                    _logger.LogWarning(result.Message);
+                    logger.LogError(result.Message);
                     return result;
                 }
 
-                var asiento = new Asiento
-                {
-                    IdBus = asientoSave.IdBus,
-                    NumeroPiso = asientoSave.NumeroPiso,
-                    NumeroAsiento = asientoSave.NumeroAsiento,
-                    FechaCreacion = asientoSave.FechaCreacion
-                };
-
-                _asientoRepository.Save(asiento);
+                asientoDb.Save(asientoSave);
                 result.Success = true;
                 result.Message = "Asiento guardado correctamente.";
-                _logger.LogInformation("Asiento guardado correctamente.");
+                logger.LogInformation("Asiento guardado correctamente.");
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al guardar el asiento: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                logger.LogError(result.Message);
             }
             return result;
         }
 
-        public ServiceResult UpdateAsientos(AsientoUpdateDto asientoUpdate)
+        public ServiceResult Update(Domain.Entities.Asiento asientoUpdate)
         {
             ServiceResult result = new ServiceResult();
             try
             {
-                // Validaciones
                 if (asientoUpdate.IdBus <= 0)
                 {
                     result.Success = false;
                     result.Message = "El IdBus debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    logger.LogError(result.Message);
                     return result;
                 }
 
@@ -177,7 +160,7 @@ namespace BoletosBus_CleanModular.Asiento.Application.Services
                 {
                     result.Success = false;
                     result.Message = "El NumeroPiso debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    logger.LogError(result.Message);
                     return result;
                 }
 
@@ -185,36 +168,50 @@ namespace BoletosBus_CleanModular.Asiento.Application.Services
                 {
                     result.Success = false;
                     result.Message = "El NumeroAsiento debe ser un entero positivo.";
-                    _logger.LogWarning(result.Message);
+                    logger.LogError(result.Message);
                     return result;
                 }
 
-                var asiento = _asientoRepository.FindById(asientoUpdate.IdAsiento);
-                if (asiento != null)
-                {
-                    asiento.IdBus = asientoUpdate.IdBus;
-                    asiento.NumeroPiso = asientoUpdate.NumeroPiso;
-                    asiento.NumeroAsiento = asientoUpdate.NumeroAsiento;
 
-                    _asientoRepository.Update(asiento);
-                    result.Success = true;
-                    result.Message = "Asientos actualizados correctamente.";
-                    _logger.LogInformation("Asientos actualizados correctamente.");
-                }
-                else
-                {
-                    result.Success = false;
-                    result.Message = "Asiento no encontrado.";
-                    _logger.LogWarning("Asiento con id {Id} no encontrado.", asientoUpdate.IdAsiento);
-                }
+
+                asientoDb.Update(asientoUpdate);
+                result.Success = true;
+                result.Message = "Asientos actualizados correctamente.";
+                logger.LogInformation("Asientos actualizados correctamente.");
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al actualizar los asientos: " + ex.Message;
-                _logger.LogError(ex, result.Message);
+                logger.LogError(result.Message);
             }
             return result;
         }
+
+        Domain.Entities.Asiento IBaseRepository<Domain.Entities.Asiento, int>.FindById(int id)
+        {
+            return asientoDb.FindById(id);
+        }
+
+        List<Domain.Entities.Asiento> IBaseRepository<Domain.Entities.Asiento, int>.GetAll()
+        {
+            return asientoDb.GetAll();
+        }
+
+        Bus.Application.Base.ServiceResult IBaseRepository<Domain.Entities.Asiento, int>.Remove(Domain.Entities.Asiento entity)
+        {
+            return asientoDb.Remove(entity);
+        }
+
+        Bus.Application.Base.ServiceResult IBaseRepository<Domain.Entities.Asiento, int>.Save(Domain.Entities.Asiento entity)
+        {
+            return asientoDb.Save(entity);
+        }
+
+        Bus.Application.Base.ServiceResult IBaseRepository<Domain.Entities.Asiento, int>.Update(Domain.Entities.Asiento entity)
+        {
+            return asientoDb.Update(entity);
+        }
     }
-}
+    }
+

@@ -1,206 +1,162 @@
-﻿using BoletoBus_CleanModular.Cliente.Application.Base;
-using BoletoBus_CleanModular.Cliente.Application.Dtos;
-using BoletoBus_CleanModular.Cliente.Application.Interfaces;
-using BoletoBus_CleanModular.Cliente.Domain.Entities;
+﻿using BoletoBus_CleanModular.Bus.Application.Base;
+using BoletoBus_CleanModular.Bus.Application.Services;
 using BoletoBus_CleanModular.Cliente.Domain.Interfaces;
+using BoletoBus_CleanModular.Common.Data.Repository;
+using BoletosBus_CleanModular.Infraestructure.Logger.Services;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 
-namespace BoletoBus_CleanModular.Cliente.Application.Services
+namespace BoletoBus_CleanModular.Cliente.Persistence.Repositories
 {
-    public class ClienteService : IClienteService
+    public class ClienteRepository : IClienteRepository
     {
-        private readonly IClienteRepository clienteRepository;
-        private readonly ILogger<ClienteService> logger;
+        private readonly IClienteRepository _clienteRepository;
+        private readonly LoggerService<BusService> _logger;
 
-        public ClienteService(IClienteRepository clienteRepository, ILogger<ClienteService> logger)
+        public ClienteRepository(IClienteRepository clienteRepository, LoggerService<BusService> _logger)
         {
-            this.clienteRepository = clienteRepository;
-            this.logger = logger;
+            this._clienteRepository = clienteRepository;
+            this._logger = _logger;
         }
-
-        public ServiceResult DeleteCliente(ClienteDeleteDto clienteDelete)
+        public ServiceResult FindById(int id)
         {
             ServiceResult result = new ServiceResult();
             try
             {
-                var cliente = clienteRepository.FindById(clienteDelete.IdCliente);
-                if (cliente != null)
-                {
-                    clienteRepository.Remove(cliente);
-                    result.Success = true;
-                    result.Message = "Cliente eliminado correctamente.";
-                    logger.LogInformation("Cliente eliminado correctamente.");
-                }
-                else
-                {
-                    result.Success = false;
-                    result.Message = "Cliente no encontrado.";
-                    logger.LogWarning("Cliente con id {Id} no encontrado.", clienteDelete.IdCliente);
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = "Error al eliminar el cliente: " + ex.Message;
-                logger.LogError(ex, result.Message);
-            }
-            return result;
-        }
-
-        public ServiceResult GetCliente(int id)
-        {
-            ServiceResult result = new ServiceResult();
-            try
-            {
-                var cliente = clienteRepository.FindById(id);
+                var cliente = _clienteRepository.FindById(id);
                 if (cliente != null)
                 {
                     result.Data = cliente;
                     result.Success = true;
-                    logger.LogInformation("Cliente obtenido correctamente.");
+                    _logger.LogInformation("Cliente obtenido correctamente.");
                 }
                 else
                 {
                     result.Success = false;
                     result.Message = "Cliente no encontrado.";
-                    logger.LogWarning("Cliente con id {Id} no encontrado.", id);
+                    _logger.LogInformation($"Cliente con id {id} no encontrado.");
                 }
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al obtener el cliente: " + ex.Message;
-                logger.LogError(ex, result.Message);
+                _logger.LogError(result.Message);
             }
             return result;
         }
 
-        public ServiceResult GetClientes()
+        public ServiceResult GetAll()
         {
             ServiceResult result = new ServiceResult();
             try
             {
-                var clientes = clienteRepository.GetAll();
+                var clientes = _clienteRepository.GetAll();
                 result.Data = clientes;
                 result.Success = true;
-                logger.LogInformation("Clientes obtenidos correctamente.");
+                _logger.LogInformation("Clientes obtenidos correctamente.");
             }
             catch (Exception ex)
             {
                 result.Success = false;
                 result.Message = "Error al obtener los clientes: " + ex.Message;
-                logger.LogError(ex, result.Message);
+                _logger.LogError(result.Message);
             }
             return result;
         }
 
-        public ServiceResult SaveCliente(ClienteSaveDto clienteSave)
+        public ServiceResult Remove(Domain.Entities.Cliente clienteDelete)
         {
             ServiceResult result = new ServiceResult();
             try
             {
-                if (string.IsNullOrEmpty(clienteSave.Nombre) || clienteSave.Nombre.Length > 50)
-                {
-                    result.Success = false;
-                    result.Message = "El nombre del cliente es inválido.";
-                    logger.LogWarning(result.Message);
-                    return result;
-                }
-
-                if (!string.IsNullOrEmpty(clienteSave.Telefono) && clienteSave.Telefono.Length > 20)
-                {
-                    result.Success = false;
-                    result.Message = "El teléfono del cliente es inválido.";
-                    logger.LogWarning(result.Message);
-                    return result;
-                }
-
-                if (!string.IsNullOrEmpty(clienteSave.Email) && clienteSave.Email.Length > 50)
-                {
-                    result.Success = false;
-                    result.Message = "El email del cliente es inválido.";
-                    logger.LogWarning(result.Message);
-                    return result;
-                }
-
-                var cliente = new Cliente
-                {
-                    Nombre = clienteSave.Nombre,
-                    Telefono = clienteSave.Telefono,
-                    Email = clienteSave.Email
-                };
-
-                clienteRepository.Save(cliente);
-                result.Success = true;
-                result.Message = "Cliente guardado correctamente.";
-                logger.LogInformation("Cliente guardado correctamente.");
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = "Error al guardar el cliente: " + ex.Message;
-                logger.LogError(ex, result.Message);
-            }
-            return result;
-        }
-
-        public ServiceResult UpdateCliente(ClienteUpdateDto clienteUpdate)
-        {
-            ServiceResult result = new ServiceResult();
-            try
-            {
-                if (string.IsNullOrEmpty(clienteUpdate.Nombre) || clienteUpdate.Nombre.Length > 50)
-                {
-                    result.Success = false;
-                    result.Message = "El nombre del cliente es inválido.";
-                    logger.LogWarning(result.Message);
-                    return result;
-                }
-
-                if (!string.IsNullOrEmpty(clienteUpdate.Telefono) && clienteUpdate.Telefono.Length > 20)
-                {
-                    result.Success = false;
-                    result.Message = "El teléfono del cliente es inválido.";
-                    logger.LogWarning(result.Message);
-                    return result;
-                }
-
-                if (!string.IsNullOrEmpty(clienteUpdate.Email) && clienteUpdate.Email.Length > 50)
-                {
-                    result.Success = false;
-                    result.Message = "El email del cliente es inválido.";
-                    logger.LogWarning(result.Message);
-                    return result;
-                }
-
-                var cliente = clienteRepository.FindById(clienteUpdate.IdCliente);
+                var cliente = _clienteRepository.FindById(clienteDelete.Id);
                 if (cliente != null)
                 {
-                    cliente.Nombre = clienteUpdate.Nombre;
-                    cliente.Telefono = clienteUpdate.Telefono;
-                    cliente.Email = clienteUpdate.Email;
-
-                    clienteRepository.Update(cliente);
+                    _clienteRepository.Remove(clienteDelete);
                     result.Success = true;
-                    result.Message = "Cliente actualizado correctamente.";
-                    logger.LogInformation("Cliente actualizado correctamente.");
+                    result.Message = "Cliente eliminado correctamente.";
+                    _logger.LogInformation("Cliente eliminado correctamente.");
                 }
                 else
                 {
                     result.Success = false;
                     result.Message = "Cliente no encontrado.";
-                    logger.LogWarning("Cliente con id {Id} no encontrado.", clienteUpdate.IdCliente);
+                    _logger.LogInformation($"Cliente con id {clienteDelete.Id} no encontrado.");
                 }
             }
             catch (Exception ex)
             {
                 result.Success = false;
-                result.Message = "Error al actualizar el cliente: " + ex.Message;
-                logger.LogError(ex, result.Message);
+                result.Message = "Error al eliminar el cliente: " + ex.Message;
+                _logger.LogError(result.Message);
             }
             return result;
+        }
+
+        public ServiceResult Save(Domain.Entities.Cliente clienteSave)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
+
+                if (string.IsNullOrWhiteSpace(clienteSave.Nombre) || clienteSave.Nombre.Length > 50)
+                {
+                    result.Success = false;
+                    result.Message = "El Nombre es inválido.";
+                    _logger.LogInformation(result.Message);
+                    return result;
+                }
+
+                _clienteRepository.Save(clienteSave);
+                result.Success = true;
+                result.Message = "Cliente guardado correctamente.";
+                _logger.LogInformation("Cliente guardado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error al guardar el cliente: " + ex.Message;
+                _logger.LogError(result.Message);
+            }
+            return result;
+        }
+
+        public ServiceResult Update(Domain.Entities.Cliente clienteUpdate)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
+
+                if (string.IsNullOrWhiteSpace(clienteUpdate.Nombre) || clienteUpdate.Nombre.Length > 50)
+                {
+                    result.Success = false;
+                    result.Message = "El Nombre es inválido.";
+                    _logger.LogInformation(result.Message);
+                    return result;
+                }
+
+                _clienteRepository.Update(clienteUpdate);
+                result.Success = true;
+                result.Message = "Cliente actualizado correctamente.";
+                _logger.LogInformation("Cliente actualizado correctamente.");
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error al actualizar el cliente: " + ex.Message;
+                _logger.LogError(result.Message);
+            }
+            return result;
+        }
+
+        Domain.Entities.Cliente IBaseRepository<Domain.Entities.Cliente, int>.FindById(int id)
+        {
+            return _clienteRepository.FindById(id);
+        }
+
+        List<Domain.Entities.Cliente> IBaseRepository<Domain.Entities.Cliente, int>.GetAll()
+        {
+            return _clienteRepository.GetAll();
         }
     }
 }

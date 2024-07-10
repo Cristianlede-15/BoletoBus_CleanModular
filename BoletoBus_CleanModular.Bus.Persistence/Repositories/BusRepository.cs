@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace BoletoBus_CleanModular.Bus.Application.Services
 {
-    public class BusService : IBusService
+    public class BusRepository : IBusService
     {
         private readonly IBusRepository busRepository;
         private readonly ILogger<BusService> logger;
 
-        public BusService(IBusRepository busRepository, ILogger<BusService> logger)
+        public BusRepository(IBusRepository busRepository, ILogger<BusService> logger)
         {
             this.busRepository = busRepository;
             this.logger = logger;
@@ -151,13 +151,13 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                     return result;
                 }
 
-                var bus = new Bus
+                var bus = new Domain.Entities.Bus
                 {
                     NumeroPlaca = busSave.NumeroPlaca,
                     Nombre = busSave.Nombre,
                     CapacidadPiso1 = busSave.CapacidadPiso1,
                     CapacidadPiso2 = busSave.CapacidadPiso2,
-                    Disponible = busSave.Disponible,
+                    Disponible = (bool?)busSave.Disponible,
                     FechaCreacion = busSave.FechaCreacion
                 };
 

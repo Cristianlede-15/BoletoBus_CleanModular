@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BoletoBus_CleanModular.Common.Data\BoletoBus_CleanModular.Common.Data.csproj" />
+    <ProjectReference Include="..\BoletosBus_CleanModular.Asiento.Api\BoletosBus_CleanModular.Asiento.Api.csproj" />
   </ItemGroup>
 
 </Project>

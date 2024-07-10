@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "BoletoBus_CleanModular.Bus.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BoletosBus_CleanModular.Infraestructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BoletoBus_CleanModular.Bus.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoletoBus_CleanModular.Bus.Application.dll": {}
+        }
+      },
+      "BoletosBus_CleanModular.Infraestructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BoletosBus_CleanModular.Infraestructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BoletosBus_CleanModular.Infraestructure.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "BoletoBus_CleanModular.Bus.Application/1.0.0": {
+      "type": "project",
+      "path": "../BoletoBus_CleanModular.Bus.Application/BoletoBus_CleanModular.Bus.Application.csproj",
+      "msbuildProject": "../BoletoBus_CleanModular.Bus.Application/BoletoBus_CleanModular.Bus.Application.csproj"
+    },
+    "BoletosBus_CleanModular.Infraestructure/1.0.0": {
+      "type": "project",
+      "path": "../BoletosBus_CleanModular.Infraestructure/BoletosBus_CleanModular.Infraestructure.csproj",
+      "msbuildProject": "../BoletosBus_CleanModular.Infraestructure/BoletosBus_CleanModular.Infraestructure.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "BoletoBus_CleanModular.Bus.Application >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\pc\\.nuget\\packages\\": {},
@@ -39,7 +76,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\pc\\OneDrive\\Escritorio\\BoletoBus_CleanModular\\BoletoBus_CleanModular.Bus.Application\\BoletoBus_CleanModular.Bus.Application.csproj": {
+              "projectPath": "C:\\Users\\pc\\OneDrive\\Escritorio\\BoletoBus_CleanModular\\BoletoBus_CleanModular.Bus.Application\\BoletoBus_CleanModular.Bus.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
