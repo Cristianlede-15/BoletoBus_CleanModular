@@ -1,15 +1,15 @@
 ﻿using BoletoBus_CleanModular.Asiento.Domain.Interfaces;
-using BoletosBus_CleanModular.Asiento.Application.Base;
-using BoletosBus_CleanModular.Asiento.Application.Dtos;
-using BoletosBus_CleanModular.Asiento.Application.Interfaces;
-using BoletosBus_CleanModular.Infraestructure.Logger.Services;
+using BoletoBus_CleanModular.Asiento.Application.Base;
+using BoletoBus_CleanModular.Asiento.Application.Dtos;
+using BoletoBus_CleanModular.Asiento.Application.Interfaces;
+using BoletoBus_CleanModular.Infraestructure.Logger.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoletosBus_CleanModular.Asiento.Application.Services
+namespace BoletoBus_CleanModular.Asiento.Application.Services
 {
     public class AsientoService : IAsientoService
     {

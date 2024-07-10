@@ -10,3 +10,9 @@ C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Co
 C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\obj\Debug\net8.0\refint\BoletoBus_CleanModular.Common.Data.dll
 C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\obj\Debug\net8.0\BoletoBus_CleanModular.Common.Data.pdb
 C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\obj\Debug\net8.0\ref\BoletoBus_CleanModular.Common.Data.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\bin\Debug\net8.0\BoletoBus_CleanModular.Bus.Application.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\bin\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\bin\Debug\net8.0\BoletoBus_CleanModular.Bus.Application.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\bin\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\obj\Debug\net8.0\BoletoBus_CleanModular.Common.Data.csproj.AssemblyReference.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Common.Data\obj\Debug\net8.0\BoletoBu.F975BA90.Up2Date

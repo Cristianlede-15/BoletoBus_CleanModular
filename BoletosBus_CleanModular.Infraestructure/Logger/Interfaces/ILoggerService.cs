@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoletosBus_CleanModular.Infraestructure.Logger.Interfaces
+namespace BoletoBus_CleanModular.Infraestructure.Logger.Interfaces
 {
     public interface ILoggerService
     {

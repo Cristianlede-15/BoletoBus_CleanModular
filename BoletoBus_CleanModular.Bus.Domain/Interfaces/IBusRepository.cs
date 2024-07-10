@@ -9,7 +9,6 @@ namespace BoletoBus_CleanModular.Bus.Domain.Interfaces
 {
     public interface IBusRepository : IBaseRepository<Bus.Domain.Entities.Bus, int>
     {
-        List<Bus.Domain.Entities.Bus> GetBusesPorId(int busId);
 
     }
 }

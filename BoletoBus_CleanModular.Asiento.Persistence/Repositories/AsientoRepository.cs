@@ -7,10 +7,10 @@ using BoletoBus_CleanModular.Asiento.Domain.Interfaces;
 using BoletoBus_CleanModular.Asiento.Persistence.Context;
 using BoletoBus_CleanModular.Asiento.Persistence.Interfaces;
 using BoletoBus_CleanModular.Common.Data.Repository;
-using BoletosBus_CleanModular.Asiento.Application.Base;
-using BoletosBus_CleanModular.Asiento.Application.Interfaces;
-using BoletosBus_CleanModular.Asiento.Application.Services;
-using BoletosBus_CleanModular.Infraestructure.Logger.Services;
+using BoletoBus_CleanModular.Asiento.Application.Base;
+using BoletoBus_CleanModular.Asiento.Application.Interfaces;
+using BoletoBus_CleanModular.Asiento.Application.Services;
+using BoletoBus_CleanModular.Infraestructure.Logger.Services;
 using Microsoft.Extensions.Logging;
 
 namespace BoletoBus_CleanModular.Asiento.Persistence.Repositories

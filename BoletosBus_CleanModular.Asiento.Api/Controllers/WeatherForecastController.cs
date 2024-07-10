@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace BoletosBus_CleanModular.Asiento.Api.Controllers
+namespace BoletoBus_CleanModular.Asiento.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

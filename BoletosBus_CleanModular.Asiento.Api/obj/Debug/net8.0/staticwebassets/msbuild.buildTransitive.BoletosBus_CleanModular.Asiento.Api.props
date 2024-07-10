@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\BoletosBus_CleanModular.Asiento.Api.props" />
-</Project>

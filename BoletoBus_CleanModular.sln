@@ -60,21 +60,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Asie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Asiento.Persistence", "BoletoBus_CleanModular.Asiento.Persistence\BoletoBus_CleanModular.Asiento.Persistence.csproj", "{6BAFDEAC-231B-49D9-8677-4C62E38CB9BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Bus.Api", "BoletoBus_CleanModular.Bus.Api\BoletoBus_CleanModular.Bus.Api.csproj", "{48DC644B-CD2C-4301-8994-2889782A2597}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Bus.Api", "BoletoBus_CleanModular.Bus.Api\BoletoBus_CleanModular.Bus.Api.csproj", "{48DC644B-CD2C-4301-8994-2889782A2597}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Bus.Application", "BoletoBus_CleanModular.Bus.Application\BoletoBus_CleanModular.Bus.Application.csproj", "{DFB82214-E4D6-4B3B-8217-F41915A05F5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Bus.Application", "BoletoBus_CleanModular.Bus.Application\BoletoBus_CleanModular.Bus.Application.csproj", "{DFB82214-E4D6-4B3B-8217-F41915A05F5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Bus.Domain", "BoletoBus_CleanModular.Bus.Domain\BoletoBus_CleanModular.Bus.Domain.csproj", "{B1B4BB7F-B68E-4999-A05A-B8298ABF2E17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Bus.Domain", "BoletoBus_CleanModular.Bus.Domain\BoletoBus_CleanModular.Bus.Domain.csproj", "{B1B4BB7F-B68E-4999-A05A-B8298ABF2E17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Bus.Persistence", "BoletoBus_CleanModular.Bus.Persistence\BoletoBus_CleanModular.Bus.Persistence.csproj", "{39A96FED-5888-475D-85DD-5EF77D5DEB5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Bus.Persistence", "BoletoBus_CleanModular.Bus.Persistence\BoletoBus_CleanModular.Bus.Persistence.csproj", "{39A96FED-5888-475D-85DD-5EF77D5DEB5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Cliente.Api", "BoletoBus_CleanModular.Cliente.Api\BoletoBus_CleanModular.Cliente.Api.csproj", "{D9B77486-8963-4AE0-8B0C-039D46A5780E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Cliente.Api", "BoletoBus_CleanModular.Cliente.Api\BoletoBus_CleanModular.Cliente.Api.csproj", "{D9B77486-8963-4AE0-8B0C-039D46A5780E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Cliente.Application", "BoletoBus_CleanModular.Cliente.Application\BoletoBus_CleanModular.Cliente.Application.csproj", "{18024FC3-924D-4FC0-8F48-378123C00507}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Cliente.Application", "BoletoBus_CleanModular.Cliente.Application\BoletoBus_CleanModular.Cliente.Application.csproj", "{18024FC3-924D-4FC0-8F48-378123C00507}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Cliente.Domain", "BoletoBus_CleanModular.Cliente.Domain\BoletoBus_CleanModular.Cliente.Domain.csproj", "{0356E774-93EC-493C-82FF-21D6E6E648C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Cliente.Domain", "BoletoBus_CleanModular.Cliente.Domain\BoletoBus_CleanModular.Cliente.Domain.csproj", "{0356E774-93EC-493C-82FF-21D6E6E648C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Cliente.Persistence", "BoletoBus_CleanModular.Cliente.Persistence\BoletoBus_CleanModular.Cliente.Persistence.csproj", "{6AA5563D-5B94-4FEC-A212-690339B9E63B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoletoBus_CleanModular.Cliente.Persistence", "BoletoBus_CleanModular.Cliente.Persistence\BoletoBus_CleanModular.Cliente.Persistence.csproj", "{6AA5563D-5B94-4FEC-A212-690339B9E63B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOC", "IOC", "{811B398A-B035-4909-87DA-1AFE677710E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Asiento.IOC", "BoletoBus_CleanModular.Asiento.IOC\BoletoBus_CleanModular.Asiento.IOC.csproj", "{23BB7814-B8AF-4CC6-A580-9C0BA07EB356}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOC", "IOC", "{9068FB08-CDAD-479E-89D2-112EA1DDFD1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOC", "IOC", "{B20AE86E-66FE-495B-9A5D-7112A9F8B86A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Bus.IOC", "BoletoBus_CleanModular.Bus.IOC\BoletoBus_CleanModular.Bus.IOC.csproj", "{DDD65361-E13B-455A-B796-C6022681BCC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoletoBus_CleanModular.Cliente.IOC", "BoletoBus_CleanModular.Cliente.IOC\BoletoBus_CleanModular.Cliente.IOC.csproj", "{01F10C43-B79D-4E21-BD66-2C7A3278EB37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -138,6 +150,18 @@ Global
 		{6AA5563D-5B94-4FEC-A212-690339B9E63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AA5563D-5B94-4FEC-A212-690339B9E63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AA5563D-5B94-4FEC-A212-690339B9E63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23BB7814-B8AF-4CC6-A580-9C0BA07EB356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23BB7814-B8AF-4CC6-A580-9C0BA07EB356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23BB7814-B8AF-4CC6-A580-9C0BA07EB356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23BB7814-B8AF-4CC6-A580-9C0BA07EB356}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD65361-E13B-455A-B796-C6022681BCC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD65361-E13B-455A-B796-C6022681BCC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD65361-E13B-455A-B796-C6022681BCC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD65361-E13B-455A-B796-C6022681BCC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F10C43-B79D-4E21-BD66-2C7A3278EB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F10C43-B79D-4E21-BD66-2C7A3278EB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F10C43-B79D-4E21-BD66-2C7A3278EB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F10C43-B79D-4E21-BD66-2C7A3278EB37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -177,6 +201,12 @@ Global
 		{18024FC3-924D-4FC0-8F48-378123C00507} = {4FF09F4F-963E-4A31-849F-6632476A87FE}
 		{0356E774-93EC-493C-82FF-21D6E6E648C3} = {41F0511D-321D-40E1-8DD2-BDE327DF16E6}
 		{6AA5563D-5B94-4FEC-A212-690339B9E63B} = {DB7F8BC1-C11C-48D7-A61A-C452FF126AA1}
+		{811B398A-B035-4909-87DA-1AFE677710E3} = {78179BE8-3082-415A-BBAD-7B8C88D8C326}
+		{23BB7814-B8AF-4CC6-A580-9C0BA07EB356} = {811B398A-B035-4909-87DA-1AFE677710E3}
+		{9068FB08-CDAD-479E-89D2-112EA1DDFD1B} = {38F76B82-3538-4094-A330-6600FFD4E46B}
+		{B20AE86E-66FE-495B-9A5D-7112A9F8B86A} = {5CBFF383-0340-4179-8A18-F90CB9287F14}
+		{DDD65361-E13B-455A-B796-C6022681BCC9} = {9068FB08-CDAD-479E-89D2-112EA1DDFD1B}
+		{01F10C43-B79D-4E21-BD66-2C7A3278EB37} = {B20AE86E-66FE-495B-9A5D-7112A9F8B86A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9C9D6F27-25ED-4F71-AED9-19655742DF39}

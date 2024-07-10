@@ -3,6 +3,7 @@ using BoletoBus_CleanModular.Bus.Application.Dtos;
 using BoletoBus_CleanModular.Bus.Application.Interfaces;
 using BoletoBus_CleanModular.Bus.Domain.Entities;
 using BoletoBus_CleanModular.Bus.Domain.Interfaces;
+using BoletoBus_CleanModular.Common.Data.Repository;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace BoletoBus_CleanModular.Bus.Application.Services
 {
-    public class BusRepository : IBusService
+    public class BusRepository : IBusRepository
     {
         private readonly IBusRepository busRepository;
         private readonly ILogger<BusService> logger;
@@ -22,36 +23,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
             this.logger = logger;
         }
 
-        public ServiceResult DeleteBus(BusDeleteDto busDelete)
-        {
-            ServiceResult result = new ServiceResult();
-            try
-            {
-                var bus = busRepository.FindById(busDelete.IdBus);
-                if (bus != null)
-                {
-                    busRepository.Remove(bus);
-                    result.Success = true;
-                    result.Message = "Bus eliminado correctamente.";
-                    logger.LogInformation("Bus eliminado correctamente.");
-                }
-                else
-                {
-                    result.Success = false;
-                    result.Message = "Bus no encontrado.";
-                    logger.LogWarning("Bus con id {Id} no encontrado.", busDelete.IdBus);
-                }
-            }
-            catch (Exception ex)
-            {
-                result.Success = false;
-                result.Message = "Error al eliminar el bus: " + ex.Message;
-                logger.LogError(ex, result.Message);
-            }
-            return result;
-        }
-
-        public ServiceResult GetBus(int id)
+        public ServiceResult FindById(int id)
         {
             ServiceResult result = new ServiceResult();
             try
@@ -77,10 +49,12 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 logger.LogError(ex, result.Message);
             }
             return result;
+
         }
 
-        public ServiceResult GetBuses()
+        public ServiceResult GetAll()
         {
+
             ServiceResult result = new ServiceResult();
             try
             {
@@ -96,9 +70,40 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 logger.LogError(ex, result.Message);
             }
             return result;
+
         }
 
-        public ServiceResult SaveBus(BusSaveDto busSave)
+        public ServiceResult Remove(Domain.Entities.Bus busDelete)
+        {
+            ServiceResult result = new ServiceResult();
+            try
+            {
+                var bus = busRepository.FindById(busDelete.Id);
+                if (bus != null)
+                {
+                    busRepository.Remove(bus);
+                    result.Success = true;
+                    result.Message = "Bus eliminado correctamente.";
+                    logger.LogInformation("Bus eliminado correctamente.");
+                }
+                else
+                {
+                    result.Success = false;
+                    result.Message = "Bus no encontrado.";
+                    logger.LogWarning("Bus con id {Id} no encontrado.", busDelete.Id);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                result.Message = "Error al eliminar el bus: " + ex.Message;
+                logger.LogError(ex, result.Message);
+            }
+            return result;
+
+        }
+
+        public ServiceResult Save(Domain.Entities.Bus busSave)
         {
             ServiceResult result = new ServiceResult();
             try
@@ -173,9 +178,10 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 logger.LogError(ex, result.Message);
             }
             return result;
+
         }
 
-        public ServiceResult UpdateBuses(BusUpdateDto busUpdate)
+        public ServiceResult Update(Domain.Entities.Bus busUpdate)
         {
             ServiceResult result = new ServiceResult();
             try
@@ -220,7 +226,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                     return result;
                 }
 
-                var bus = busRepository.FindById(busUpdate.IdBus);
+                var bus = busRepository.FindById(busUpdate.Id);
                 if (bus != null)
                 {
                     bus.NumeroPlaca = busUpdate.NumeroPlaca;
@@ -238,7 +244,7 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 {
                     result.Success = false;
                     result.Message = "Bus no encontrado.";
-                    logger.LogWarning("Bus con id {Id} no encontrado.", busUpdate.IdBus);
+                    logger.LogWarning("Bus con id {Id} no encontrado.", busUpdate.Id);
                 }
             }
             catch (Exception ex)
@@ -248,6 +254,17 @@ namespace BoletoBus_CleanModular.Bus.Application.Services
                 logger.LogError(ex, result.Message);
             }
             return result;
+
+        }
+
+        Domain.Entities.Bus IBaseRepository<Domain.Entities.Bus, int>.FindById(int id)
+        {
+            return busRepository.FindById(id);
+        }
+
+        List<Domain.Entities.Bus> IBaseRepository<Domain.Entities.Bus, int>.GetAll()
+        {
+            return busRepository.GetAll();
         }
     }
 }

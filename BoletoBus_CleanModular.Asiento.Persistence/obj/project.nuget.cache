@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "ePVI+UdviNM=",
-  "success": true,
+  "dgSpecHash": "n4pGGK6JBEA=",
+  "success": false,
   "projectFilePath": "C:\\Users\\pc\\OneDrive\\Escritorio\\BoletoBus_CleanModular\\BoletoBus_CleanModular.Asiento.Persistence\\BoletoBus_CleanModular.Asiento.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pc\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
@@ -64,10 +64,26 @@
     "C:\\Users\\pc\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\pc\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\pc\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\pc\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.2\\microsoft.netcore.app.ref.8.0.2.nupkg.sha512",
-    "C:\\Users\\pc\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.2\\microsoft.windowsdesktop.app.ref.8.0.2.nupkg.sha512",
-    "C:\\Users\\pc\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.2\\microsoft.aspnetcore.app.ref.8.0.2.nupkg.sha512"
+    "C:\\Users\\pc\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore from 8.0.7 to 8.0.6. Reference the package directly from the project to select a different version. \r\n BoletoBus_CleanModular.Asiento.Persistence -> BoletosBus_CleanModular.Asiento.Api -> Microsoft.EntityFrameworkCore (>= 8.0.7) \r\n BoletoBus_CleanModular.Asiento.Persistence -> Microsoft.EntityFrameworkCore (>= 8.0.6)",
+      "libraryId": "Microsoft.EntityFrameworkCore",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Error",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.EntityFrameworkCore.SqlServer from 8.0.7 to 8.0.6. Reference the package directly from the project to select a different version. \r\n BoletoBus_CleanModular.Asiento.Persistence -> BoletosBus_CleanModular.Asiento.Api -> Microsoft.EntityFrameworkCore.SqlServer (>= 8.0.7) \r\n BoletoBus_CleanModular.Asiento.Persistence -> Microsoft.EntityFrameworkCore.SqlServer (>= 8.0.6)",
+      "libraryId": "Microsoft.EntityFrameworkCore.SqlServer",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

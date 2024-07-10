@@ -2,7 +2,7 @@
 using BoletoBus_CleanModular.Bus.Application.Base;
 using BoletoBus_CleanModular.Bus.Application.Dtos;
 using BoletoBus_CleanModular.Bus.Application.Interfaces;
-using BoletosBus_CleanModular.Infraestructure.Logger.Services;
+using BoletoBus_CleanModular.Infraestructure.Logger.Services;
 
 
 namespace BoletoBus_CleanModular.Bus.Application.Services

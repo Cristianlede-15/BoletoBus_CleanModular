@@ -7,14 +7,40 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "BoletoBus_CleanModular.Common.Data/1.0.0": {
+        "dependencies": {
+          "BoletoBus_CleanModular.Bus.Application": "1.0.0"
+        },
         "runtime": {
           "BoletoBus_CleanModular.Common.Data.dll": {}
+        }
+      },
+      "BoletoBus_CleanModular.Bus.Application/1.0.0": {
+        "dependencies": {
+          "BoletosBus_CleanModular.Infraestructure": "1.0.0"
+        },
+        "runtime": {
+          "BoletoBus_CleanModular.Bus.Application.dll": {}
+        }
+      },
+      "BoletosBus_CleanModular.Infraestructure/1.0.0": {
+        "runtime": {
+          "BoletosBus_CleanModular.Infraestructure.dll": {}
         }
       }
     }
   },
   "libraries": {
     "BoletoBus_CleanModular.Common.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BoletoBus_CleanModular.Bus.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BoletosBus_CleanModular.Infraestructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

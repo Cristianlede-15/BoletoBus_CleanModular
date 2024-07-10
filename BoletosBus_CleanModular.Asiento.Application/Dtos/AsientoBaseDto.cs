@@ -1,4 +1,4 @@
-﻿namespace BoletosBus_CleanModular.Asiento.Application.Dtos
+﻿namespace BoletoBus_CleanModular.Asiento.Application.Dtos
 {
     public class AsientoBaseDto
     {

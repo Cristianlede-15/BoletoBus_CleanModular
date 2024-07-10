@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoletosBus_CleanModular.Infraestructure.Notifications.Interfaces
+namespace BoletoBus_CleanModular.Infraestructure.Notifications.Interfaces
 {
     public interface INotificationService
     {

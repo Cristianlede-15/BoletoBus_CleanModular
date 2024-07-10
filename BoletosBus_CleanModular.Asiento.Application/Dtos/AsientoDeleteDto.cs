@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoletosBus_CleanModular.Asiento.Application.Dtos
+namespace BoletoBus_CleanModular.Asiento.Application.Dtos
 {
     public class AsientoDeleteDto : AsientoBaseDto
     {

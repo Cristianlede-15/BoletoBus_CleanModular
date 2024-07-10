@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BoletosBus_CleanModular.Asiento.Application.Base
+namespace BoletoBus_CleanModular.Asiento.Application.Base
 {
     public class ServiceResult
     {

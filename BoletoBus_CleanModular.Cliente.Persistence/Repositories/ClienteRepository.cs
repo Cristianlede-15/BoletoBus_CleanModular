@@ -2,7 +2,7 @@
 using BoletoBus_CleanModular.Bus.Application.Services;
 using BoletoBus_CleanModular.Cliente.Domain.Interfaces;
 using BoletoBus_CleanModular.Common.Data.Repository;
-using BoletosBus_CleanModular.Infraestructure.Logger.Services;
+using BoletoBus_CleanModular.Infraestructure.Logger.Services;
 using Microsoft.Extensions.Logging;
 
 namespace BoletoBus_CleanModular.Cliente.Persistence.Repositories
