@@ -1,12 +1,41 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\pc\\OneDrive\\Escritorio\\BoletoBus_CleanModular\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6AA5563D-5B94-4FEC-A212-690339B9E63B}|BoletoBus_CleanModular.Cliente.Persistence\\BoletoBus_CleanModular.Cliente.Persistence.csproj|c:\\users\\pc\\onedrive\\escritorio\\boletobus_cleanmodular\\boletobus_cleanmodular.cliente.persistence\\repositories\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AA5563D-5B94-4FEC-A212-690339B9E63B}|BoletoBus_CleanModular.Cliente.Persistence\\BoletoBus_CleanModular.Cliente.Persistence.csproj|solutionrelative:boletobus_cleanmodular.cliente.persistence\\repositories\\clienterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClienteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\pc\\OneDrive\\Escritorio\\BoletoBus_CleanModular\\BoletoBus_CleanModular.Cliente.Persistence\\Repositories\\ClienteRepository.cs",
+              "RelativeDocumentMoniker": "BoletoBus_CleanModular.Cliente.Persistence\\Repositories\\ClienteRepository.cs",
+              "ToolTip": "C:\\Users\\pc\\OneDrive\\Escritorio\\BoletoBus_CleanModular\\BoletoBus_CleanModular.Cliente.Persistence\\Repositories\\ClienteRepository.cs",
+              "RelativeToolTip": "BoletoBus_CleanModular.Cliente.Persistence\\Repositories\\ClienteRepository.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-11T15:08:57.99Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
