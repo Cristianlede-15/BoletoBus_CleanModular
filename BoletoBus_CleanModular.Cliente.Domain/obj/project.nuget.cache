@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+DyP/c3ZHoo=",
+  "dgSpecHash": "Xld6vlyugZQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\pc\\OneDrive\\Escritorio\\BoletoBus_CleanModular\\BoletoBus_CleanModular.Cliente.Domain\\BoletoBus_CleanModular.Cliente.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.2\\microsoft.netcore.app.ref.8.0.2.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.2\\microsoft.windowsdesktop.app.ref.8.0.2.nupkg.sha512",
+    "C:\\Users\\pc\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.2\\microsoft.aspnetcore.app.ref.8.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

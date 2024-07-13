@@ -1,0 +1,6 @@
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Persistence\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Persistence.csproj.AssemblyReference.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Persistence\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Persistence\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Persistence.AssemblyInfoInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Persistence\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Persistence.AssemblyInfo.cs
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Persistence\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Asiento.Persistence\obj\Debug\net8.0\BoletoBus_CleanModular.Asiento.Persistence.sourcelink.json

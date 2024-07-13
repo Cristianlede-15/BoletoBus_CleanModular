@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\BoletoBus_CleanModular.Bus.Api.props" />
+</Project>

@@ -1,0 +1,16 @@
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\bin\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.deps.json
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\bin\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\bin\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\bin\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\bin\Debug\net8.0\BoletosBus_CleanModular.Infraestructure.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.csproj.AssemblyReference.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.AssemblyInfoInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.AssemblyInfo.cs
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.sourcelink.json
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBu.5B322E9D.Up2Date
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\refint\BoletoBus_CleanModular.Cliente.Application.dll
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Application.pdb
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Application\obj\Debug\net8.0\ref\BoletoBus_CleanModular.Cliente.Application.dll

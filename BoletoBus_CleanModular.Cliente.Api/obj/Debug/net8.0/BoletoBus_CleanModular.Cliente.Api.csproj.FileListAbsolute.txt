@@ -1,0 +1,7 @@
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Api\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Api.csproj.AssemblyReference.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Api\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Api\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Api.AssemblyInfoInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Api\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Api.AssemblyInfo.cs
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Api\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Api.csproj.CoreCompileInputs.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Api\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\pc\OneDrive\Escritorio\BoletoBus_CleanModular\BoletoBus_CleanModular.Cliente.Api\obj\Debug\net8.0\BoletoBus_CleanModular.Cliente.Api.sourcelink.json
